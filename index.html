@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.titolo">Annalisa &amp; Piero · 1 maggio 2027</title>
+  <meta name="description" data-i18n-content="meta.descrizione" content="Il matrimonio di Annalisa e Piero, sabato 1 maggio 2027 al Portico del Seminario, Calcinate (BG).">
+  <!-- Bozza locale: togliere noindex solo se si vuole che il sito compaia sui motori di ricerca -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 60V30a24 24 0 0 1 48 0v30' fill='none' stroke='%237d8a6a' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/fonts.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=45">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <a class="nav__brand" href="#home">A <span>&amp;</span> P</a>
+    <nav class="nav__menu" id="nav-menu">
+      <a href="#storia" data-i18n="nav.storia">La nostra storia</a>
+      <a href="#giorno" data-i18n="nav.giorno">Il giorno</a>
+      <a href="#location" data-i18n="nav.location">Location</a>
+      <a href="#arrivare" data-i18n="nav.arrivare">Come arrivare</a>
+      <a href="#info" data-i18n="nav.info">Info utili</a>
+      <a href="#rsvp" class="nav__cta">RSVP</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Lingua · Language">
+      <button type="button" class="lang__btn" data-lang="it" lang="it" aria-pressed="true" title="Italiano">IT</button>
+      <button type="button" class="lang__btn" data-lang="en" lang="en" aria-pressed="false" title="English">EN</button>
+    </div>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri il menu" data-i18n-aria-label="nav.apri">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <!-- rami del motivo, come nel save the date: solo sullo sfondo salvia, dietro il biglietto, mai sopra -->
+      <div class="hero__rami" aria-hidden="true">
+        <img class="ramo ramo--alto" src="assets/illustrations/ramo-pendente.svg" alt="">
+        <img class="ramo ramo--destra" src="assets/illustrations/ramo-pendente.svg" alt="">
+        <img class="ramo ramo--basso" src="assets/illustrations/ramo-eretto.svg" alt="">
+        <img class="ramo ramo--sinistra" src="assets/illustrations/ramo-eretto.svg" alt="">
+      </div>
+      <div class="hero__content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Ci sposiamo</p>
+        <h1 class="hero__names">Annalisa<span class="amp">&amp;</span>Piero</h1>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+        <p class="hero__date" data-i18n="hero.data">Sabato 1 maggio 2027<span class="hero__time">ore 12:30</span></p>
+        <p class="hero__place" data-i18n="hero.luogo">Portico del Seminario<span>Calcinate (BG)</span></p>
+
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#rsvp" data-i18n="hero.conferma">Conferma la presenza</a>
+          <button class="btn btn--ghost" type="button" id="add-to-calendar" data-i18n="hero.calendario">Aggiungi al calendario</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORIA ============ -->
+    <section class="section" id="storia">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="storia.eyebrow">Noi due</p>
+        <h2 data-i18n="storia.titolo">La nostra storia</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+      </div>
+      <div class="story reveal">
+        <figure class="story__portrait"><img src="assets/photos/noi.jpg" alt="Annalisa e Piero" data-i18n-alt="foto.noi"></figure>
+        <p class="lead">
+          <span data-i18n="storia.incontro">Ci siamo conosciuti a Francoforte il 19 settembre 2020.</span>
+        </p>
+      </div>
+
+      <p class="eyebrow travels__title reveal" data-i18n="viaggi.eyebrow">In giro per il mondo</p>
+      <h3 class="viaggi__titolo reveal" data-i18n="viaggi.titolo">I nostri viaggi</h3>
+      <p class="viaggi__hint reveal" data-i18n="viaggi.hint">Tocca un punto sul mappamondo per vedere le nostre foto.</p>
+      <div class="viaggi reveal">
+        <div class="viaggi__globo" hidden>
+          <svg class="globo" viewBox="0 0 500 500" role="img" aria-label="Mappamondo con i posti in cui siamo stati" data-i18n-aria-label="viaggi.globo"></svg>
+        </div>
+        <div class="viaggi__lato">
+          <ul class="mete">
+            <li class="meta" data-luogo="francoforte">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="t.incontro.data">19 settembre 2020</span>
+                <span class="meta__luogo" data-i18n="luogo.francoforte">Francoforte</span>
+                <span class="meta__frase" data-i18n="t.incontro.frase">Qui ci siamo conosciuti</span>
+              </button>
+              <div class="meta__dettagli">
+                <div class="meta__foto">
+                  <figure class="polaroid">
+                    <img src="assets/photos/francoforte.jpg" alt="Annalisa e Piero a Francoforte, di sera sul fiume Meno" data-i18n-alt="foto.francoforte" loading="lazy">
+                    <figcaption data-i18n="didascalia.francoforte">Di sera sul Meno</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <li class="meta" data-luogo="atene">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="t.atene.data">maggio – giugno 2021</span>
+                <span class="meta__luogo" data-i18n="luogo.atene">Atene</span>
+              </button>
+              <div class="meta__dettagli">
+                <div class="meta__foto">
+                  <figure class="polaroid polaroid--wide">
+                    <img src="assets/photos/atene.jpg" alt="Annalisa e Piero ad Atene, con l'Acropoli sullo sfondo" data-i18n-alt="foto.atene" loading="lazy">
+                    <figcaption data-i18n="didascalia.atene">Con l'Acropoli alle spalle</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <li class="meta" data-luogo="puglia">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="t.puglia.data">estate 2021</span>
+                <span class="meta__luogo">Puglia</span>
+              </button>
+              <div class="meta__dettagli">
+                <p class="tbd" data-i18n="t.foto.presto">Le foto arriveranno presto.</p>
+              </div>
+            </li>
+            <li class="meta" data-luogo="venezia">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__luogo" data-i18n="luogo.venezia">Venezia</span>
+              </button>
+              <div class="meta__dettagli">
+                <div class="meta__foto">
+                  <figure class="polaroid">
+                    <img src="assets/photos/venezia.jpg" alt="Annalisa e Piero a Venezia, sopra il Canal Grande" data-i18n-alt="foto.venezia" loading="lazy">
+                    <figcaption data-i18n="didascalia.venezia">Sul Canal Grande</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <li class="meta" data-luogo="washington">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="t.washington.data">giugno – agosto 2024</span>
+                <span class="meta__luogo">Washington DC</span>
+                <span class="meta__frase" data-i18n="t.washington.frase">Piero ci passa tre mesi.</span>
+              </button>
+            </li>
+            <li class="meta" data-luogo="princeton">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="t.princeton.data">gennaio – marzo 2025</span>
+                <span class="meta__luogo">Princeton</span>
+                <span class="meta__frase" data-i18n="t.princeton.frase">Piero ci passa tre mesi.</span>
+              </button>
+            </li>
+            <li class="meta" data-luogo="newyork">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__luogo">New York</span>
+              </button>
+              <div class="meta__dettagli">
+                <div class="meta__foto">
+                  <figure class="polaroid">
+                    <img src="assets/photos/newyork.jpg" alt="Annalisa e Piero a New York, con l'Empire State Building sullo sfondo" data-i18n-alt="foto.newyork" loading="lazy">
+                    <figcaption data-i18n="didascalia.newyork">Con l'Empire State Building</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <li class="meta" data-luogo="india">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="t.india.data">marzo 2026</span>
+                <span class="meta__luogo">India</span>
+              </button>
+              <div class="meta__dettagli">
+                <div class="meta__foto">
+                  <figure class="polaroid">
+                    <img src="assets/photos/agra.jpg" alt="Annalisa e Piero davanti al Taj Mahal" data-i18n-alt="foto.agra" loading="lazy">
+                    <figcaption data-i18n="didascalia.agra">Il Taj Mahal</figcaption>
+                  </figure>
+                  <figure class="polaroid">
+                    <img src="assets/photos/india.jpg" alt="Annalisa e Piero in abiti tradizionali indiani" data-i18n-alt="foto.india" loading="lazy">
+                    <figcaption data-i18n="didascalia.india">In abiti tradizionali</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <li class="meta" data-luogo="california">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="t.california.data">marzo – giugno 2026</span>
+                <span class="meta__luogo">California</span>
+                <span class="meta__frase" data-i18n="t.california.frase">A Yosemite Piero ha chiesto ad Annalisa di sposarlo.</span>
+              </button>
+              <div class="meta__dettagli">
+                <p><a href="#proposta" data-i18n="t.california.link">Leggi la proposta</a></p>
+                <div class="meta__foto">
+                  <figure class="polaroid">
+                    <img src="assets/photos/proposta-1.jpg" alt="Annalisa e Piero a Yosemite, con l'anello di fidanzamento" data-i18n-alt="foto.proposta1" loading="lazy">
+                    <figcaption data-i18n="didascalia.anello">Con l'anello</figcaption>
+                  </figure>
+                  <figure class="polaroid">
+                    <img src="assets/photos/proposta-2.jpg" alt="Annalisa e Piero davanti alle Yosemite Falls" data-i18n-alt="foto.proposta2" loading="lazy">
+                    <figcaption data-i18n="didascalia.yosemite">Le Yosemite Falls</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <li class="meta" data-luogo="">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__luogo" data-i18n="t.mare.luogo">Al mare</span>
+                <span class="meta__frase tbd" data-i18n="t.mare.dove">Dove? Da definire</span>
+              </button>
+              <div class="meta__dettagli">
+                <div class="meta__foto">
+                  <figure class="polaroid">
+                    <img src="assets/photos/trabucco.jpg" alt="Annalisa e Piero su un trabucco sul mare" data-i18n-alt="foto.trabucco" loading="lazy">
+                    <figcaption data-i18n="didascalia.trabucco">Sul trabucco</figcaption>
+                  </figure>
+                  <figure class="polaroid">
+                    <img src="assets/photos/mare.jpg" alt="Annalisa e Piero su un belvedere affacciato sul mare" data-i18n-alt="foto.mare" loading="lazy">
+                    <figcaption data-i18n="didascalia.mare">Sul belvedere</figcaption>
+                  </figure>
+                  <figure class="polaroid">
+                    <img src="assets/photos/tramonto.jpg" alt="Annalisa e Piero in spiaggia al tramonto" data-i18n-alt="foto.tramonto" loading="lazy">
+                    <figcaption data-i18n="didascalia.tramonto">Al tramonto</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <li class="meta meta--nozze" data-luogo="calcinate">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="data.breve">1 maggio 2027</span>
+                <span class="meta__luogo">Calcinate</span>
+                <span class="meta__frase" data-i18n="t.nozze.frase">Ci sposiamo!</span>
+              </button>
+              <div class="meta__dettagli">
+                <p><a href="#location" data-i18n="t.nozze.link">Scopri la location</a></p>
+                <div class="meta__foto">
+                  <figure class="polaroid polaroid--disegno">
+                    <img src="assets/illustrations/portico-cortile.svg" alt="Disegno del cortile del Portico del Seminario" data-i18n-alt="foto.disegno" loading="lazy">
+                    <figcaption>Portico del Seminario</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <li class="meta meta--futuro" data-luogo="giappone">
+              <button class="meta__nome" type="button" aria-expanded="false">
+                <span class="meta__data" data-i18n="t.giappone.data">maggio 2027</span>
+                <span class="meta__luogo" data-i18n="luogo.giappone">Giappone</span>
+                <span class="meta__frase" data-i18n="t.giappone.frase">Il nostro viaggio di nozze</span>
+              </button>
+              <div class="meta__dettagli">
+                <p data-i18n="t.giappone.regalo">Se volete farci un regalo, potete contribuire al nostro viaggio di nozze.</p>
+                <p class="tbd" data-i18n="t.giappone.iban">IBAN: da inserire.</p>
+              </div>
+            </li>
+          </ul>
+          <div class="cartolina" hidden>
+            <button class="cartolina__chiudi" type="button" aria-label="Chiudi" data-i18n-aria-label="chiudi">&times;</button>
+            <div class="cartolina__contenuto" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proposal reveal" id="proposta">
+        <div class="proposal__text">
+          <p class="eyebrow">Yosemite National Park · California</p>
+          <h3 data-i18n="proposta.titolo">La proposta</h3>
+          <div class="ornament" aria-hidden="true"><span></span></div>
+          <p data-i18n="proposta.testo">È a Yosemite, in California, che Piero ha chiesto ad Annalisa di sposarlo. E lei ha detto sì!</p>
+          <p data-i18n="proposta.giornata">Quel giorno abbiamo fatto un'escursione lunghissima: il Mist Trail, la Vernal Fall e poi su fino alla Nevada Fall. Scesi a valle, siamo passati dal fiume Merced e sotto El Capitan, e la sera a cena nella valle. Tornati in camera, è arrivata la proposta.</p>
+        </div>
+        <div class="proposal__photos">
+          <figure class="proposal__main">
+            <img src="assets/photos/proposta-1.jpg" alt="Annalisa e Piero a Yosemite, con l'anello di fidanzamento" data-i18n-alt="foto.proposta1" loading="lazy">
+          </figure>
+          <figure>
+            <img src="assets/photos/proposta-2.jpg" alt="Annalisa e Piero davanti alle Yosemite Falls" data-i18n-alt="foto.proposta2" loading="lazy">
+          </figure>
+          <figure>
+            <img src="assets/photos/proposta-3.jpg" alt="Annalisa e Piero su un belvedere accanto a una cascata di Yosemite" data-i18n-alt="foto.proposta3" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IL GIORNO ============ -->
+    <section class="section section--tint" id="giorno">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="data.lunga">Sabato 1 maggio 2027</p>
+        <h2 data-i18n="giorno.titolo">Il giorno</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+      </div>
+
+      <ol class="timeline reveal">
+        <li class="timeline__navetta">
+          <time class="when" datetime="2027-05-01T11:00">11:00</time>
+          <h3 data-i18n="giorno.navetta">Navetta</h3>
+          <p data-i18n="giorno.navetta.dove">Partenza dalla stazione di Bergamo</p>
+        </li>
+        <li>
+          <time class="when" datetime="2027-05-01T12:30">12:30</time>
+          <h3 data-i18n="giorno.cerimonia">Cerimonia</h3>
+          <p>Portico del Seminario, Calcinate</p>
+        </li>
+        <li>
+          <span class="when when--next" data-i18n="giorno.poi">a seguire</span>
+          <h3>Aperitivo</h3>
+          <p data-i18n="giorno.aperitivo">Nel chiostro e nel giardino all'italiana</p>
+        </li>
+        <li>
+          <span class="when when--next" data-i18n="giorno.poi">a seguire</span>
+          <h3 data-i18n="giorno.pranzo">Pranzo</h3>
+          <p data-i18n="giorno.pranzo.dove">Nelle sale affrescate</p>
+        </li>
+        <li>
+          <span class="when when--next" data-i18n="giorno.poi">a seguire</span>
+          <h3 data-i18n="giorno.torta">Taglio della torta</h3>
+        </li>
+        <li>
+          <span class="when when--next" data-i18n="giorno.poi">a seguire</span>
+          <h3>DJ set &amp; open bar</h3>
+          <p data-i18n="giorno.dj">Si balla fino a mezzanotte</p>
+        </li>
+        <li class="timeline__navetta">
+          <time class="when" datetime="2027-05-02T00:00">00:00</time>
+          <h3 data-i18n="giorno.navetta.ritorno">Navetta di ritorno</h3>
+          <p data-i18n="giorno.navetta.ritorno.dove">Dal Portico alla stazione di Bergamo</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ LOCATION ============ -->
+    <section class="section section--portico" id="location">
+      <div class="section__head section__head--plaque reveal">
+        <p class="eyebrow" data-i18n="location.eyebrow">Dove</p>
+        <h2>Portico del Seminario</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+      </div>
+
+
+      <div class="location location--card reveal">
+        <div class="location__text">
+          <p data-i18n="location.storia">
+            Una dimora di campagna nelle terre bergamasche di Bartolomeo Colleoni, con origini nel Quattrocento.
+            Per generazioni appartenuta a una famiglia nobile, fu donata alla Diocesi di Bergamo da una
+            nobildonna e, dopo un attento restauro conservativo, è tornata a vivere nel 2022.
+          </p>
+          <p data-i18n="location.spazi">
+            Ci aspettano il chiostro con i porticati su colonne in pietra di Sarnico, il Salone degli Affreschi,
+            le sale con volte e soffitti affrescati e il Giardino Segreto: mura in ciottoli di fiume,
+            piante secolari e un angolo ombreggiato dai salici.
+          </p>
+          <address data-i18n="location.indirizzo">
+            <strong>Portico del Seminario</strong><br>
+            Via Portico del Seminario, 1<br>
+            24050 Calcinate (BG)
+          </address>
+          <div class="location__actions">
+            <a class="btn btn--solid" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&amp;query=Portico+del+Seminario%2C+Via+Portico+del+Seminario+1%2C+24050+Calcinate+BG"
+               data-i18n="location.maps">
+              Apri in Google Maps
+            </a>
+            <a class="btn btn--ghost" target="_blank" rel="noopener"
+               href="https://www.instagram.com/porticodelseminario/">
+              Instagram
+            </a>
+          </div>
+        </div>
+        <div class="location__map">
+          <iframe title="Mappa del Portico del Seminario" data-i18n-title="location.mappa" loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=9.7660%2C45.5990%2C9.8000%2C45.6140&amp;layer=mapnik&amp;marker=45.6067%2C9.78313"></iframe>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============ COME ARRIVARE ============ -->
+    <section class="section section--tint" id="arrivare">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="arrivare.eyebrow">Viaggio</p>
+        <h2 data-i18n="arrivare.titolo">Come arrivare</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+      </div>
+
+      <div class="navetta reveal">
+        <h3 class="navetta__titolo" data-i18n="navetta.titolo">La navetta</h3>
+        <p class="navetta__sotto" data-i18n="navetta.sotto">Un pullman per chi dorme a Bergamo: vi portiamo noi alla festa e vi riportiamo indietro.</p>
+        <!-- disegno generato da tools/navetta_disegno.py -->
+        <svg class="navetta__disegno" viewBox="0 0 1000 410" role="img" aria-label="La navetta: alle 11:00 dalla stazione di Bergamo al Portico del Seminario, ritorno a mezzanotte" data-i18n-aria-label="navetta.disegno">
+<defs>
+<linearGradient id="nv-cielo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d6e6ee"/><stop offset=".42" stop-color="#e9efe8"/><stop offset=".58" stop-color="#f3d6c4"/><stop offset=".72" stop-color="#a3a7c4"/><stop offset="1" stop-color="#55628c"/></linearGradient>
+<filter id="nv-mano" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="nv-acq" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G" result="d"/><feGaussianBlur in="d" stdDeviation=".8"/></filter>
+</defs>
+<g filter="url(#nv-acq)"><path d="M18 300V64Q60 26 160 30Q420 18 640 30Q860 20 982 40V300Z" fill="url(#nv-cielo)" opacity=".85"/><path d="M18 392V292Q200 278 400 286Q640 296 982 284V392Z" fill="#c9d6ad" opacity=".55"/><path d="M360 300Q470 268 560 280Q640 290 700 300Z" fill="#b3c48f" opacity=".55"/><ellipse cx="826" cy="310" rx="120" ry="16" fill="#f6d79a" opacity=".55"/><circle cx="120" cy="74" r="22" fill="#f6d77a"/><path d="M22 238C70 168 140 138 222 136C292 136 334 176 372 238Z" fill="#a9b98f" opacity=".6"/><rect x="110" y="150" width="26" height="18" fill="#f3ebdd"/><rect x="138" y="144" width="22" height="24" fill="#f3ebdd"/><rect x="232" y="148" width="26" height="20" fill="#f3ebdd"/><rect x="262" y="152" width="22" height="16" fill="#f3ebdd"/><rect x="286" y="154" width="24" height="14" fill="#f3ebdd"/><path d="M164 168V124H184V168Z" fill="#efe3cf"/><rect x="200" y="94" width="18" height="74" fill="#ead9bf"/><path d="M46 300V238H124V300Z" fill="#f1e6d4"/><path d="M246 300V238H334V300Z" fill="#f1e6d4"/><path d="M120 300V206H250V300Z" fill="#f6ecdc"/><path d="M42 238H128L124 230H50Z" fill="#c0785a" opacity=".7"/><path d="M242 238H338L330 230H250Z" fill="#c0785a" opacity=".7"/><path d="M114 206H256L185 178Z" fill="#c0785a" opacity=".6"/><path d="M138 300V272A12 12 0 0 1 162 272V300Z" fill="#8f7a5f" opacity=".55"/><path d="M173 300V272A12 12 0 0 1 197 272V300Z" fill="#8f7a5f" opacity=".55"/><path d="M208 300V272A12 12 0 0 1 232 272V300Z" fill="#8f7a5f" opacity=".55"/><path d="M58 286V258A6 6 0 0 1 70 258V286Z" fill="#c9d9e3"/><path d="M82 286V258A6 6 0 0 1 94 258V286Z" fill="#c9d9e3"/><path d="M104 286V258A6 6 0 0 1 116 258V286Z" fill="#c9d9e3"/><path d="M258 286V258A6 6 0 0 1 270 258V286Z" fill="#c9d9e3"/><path d="M282 286V258A6 6 0 0 1 294 258V286Z" fill="#c9d9e3"/><path d="M306 286V258A6 6 0 0 1 318 258V286Z" fill="#c9d9e3"/><circle cx="185" cy="224" r="12" fill="#fbf6ea"/><circle cx="452" cy="266" r="15" fill="#86a065" opacity=".75"/><circle cx="566" cy="258" r="18" fill="#86a065" opacity=".75"/><circle cx="648" cy="276" r="13" fill="#86a065" opacity=".75"/><path d="M510 234Q519 258 515 280H505Q501 258 510 234Z" fill="#5f7d48" opacity=".8"/><path d="M528 240Q537 264 533 286H523Q519 264 528 240Z" fill="#5f7d48" opacity=".8"/><path d="M684 234Q693 258 689 280H679Q675 258 684 234Z" fill="#5f7d48" opacity=".8"/><path d="M704 300V198H952V300Z" fill="#f3ebdd"/><path d="M698 198H958L942 182H714Z" fill="#c0785a" opacity=".75"/><rect x="760" y="168" width="12" height="16" fill="#c0785a" opacity=".8"/><rect x="900" y="168" width="12" height="16" fill="#c0785a" opacity=".8"/><path d="M709.8 300V270A19 19 0 0 1 747.8 270V300Z" fill="#f4d8a8"/><rect x="721.8" y="208" width="14" height="22" fill="#f4d8a8"/><rect x="712.8" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><rect x="737.8" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><path d="M759.4 300V270A19 19 0 0 1 797.4 270V300Z" fill="#f4d8a8"/><rect x="771.4" y="208" width="14" height="22" fill="#f4d8a8"/><rect x="762.4" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><rect x="787.4" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><path d="M809 300V270A19 19 0 0 1 847 270V300Z" fill="#f4d8a8"/><rect x="821" y="208" width="14" height="22" fill="#f4d8a8"/><rect x="812" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><rect x="837" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><path d="M858.6 300V270A19 19 0 0 1 896.6 270V300Z" fill="#f4d8a8"/><rect x="870.6" y="208" width="14" height="22" fill="#f4d8a8"/><rect x="861.6" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><rect x="886.6" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><path d="M908.2 300V270A19 19 0 0 1 946.2 270V300Z" fill="#f4d8a8"/><rect x="920.2" y="208" width="14" height="22" fill="#f4d8a8"/><rect x="911.2" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><rect x="936.2" y="208" width="7" height="22" fill="#9c2433" opacity=".75"/><path d="M938 230Q944 206 970 204Q996 206 998 228Q984 238 968 234Q950 240 938 230Z" fill="#4f6b3c" opacity=".85"/></g>
+<g filter="url(#nv-mano)" fill="none" stroke="#56623f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="120" cy="74" r="22" fill="none"/><path d="M149 74L158 74" stroke-width="1.6"/><path d="M143.5 91L150.7 96.3" stroke-width="1.6"/><path d="M129 101.6L131.7 110.1" stroke-width="1.6"/><path d="M111 101.6L108.3 110.1" stroke-width="1.6"/><path d="M96.5 91L89.3 96.3" stroke-width="1.6"/><path d="M91 74L82 74" stroke-width="1.6"/><path d="M96.5 57L89.3 51.7" stroke-width="1.6"/><path d="M111 46.4L108.3 37.9" stroke-width="1.6"/><path d="M129 46.4L131.7 37.9" stroke-width="1.6"/><path d="M143.5 57L150.7 51.7" stroke-width="1.6"/><path d="M912 50A22 22 0 0 0 912 94A30 30 0 0 1 912 50Z" fill="#f8efc9"/><path d="M842 39.4L843.8 44.2L848.6 46L843.8 47.8L842 52.6L840.2 47.8L835.4 46L840.2 44.2Z" fill="#f6e3a1" stroke-width="1"/><path d="M958 114.3L959.6 118.4L963.7 120L959.6 121.6L958 125.7L956.4 121.6L952.3 120L956.4 118.4Z" fill="#f6e3a1" stroke-width="1"/><path d="M868 99.2L869.3 102.7L872.8 104L869.3 105.3L868 108.8L866.7 105.3L863.2 104L866.7 102.7Z" fill="#f6e3a1" stroke-width="1"/><path d="M790 64.7L791.4 68.6L795.3 70L791.4 71.4L790 75.3L788.6 71.4L784.7 70L788.6 68.6Z" fill="#f6e3a1" stroke-width="1"/><path d="M950 43.2L951.3 46.7L954.8 48L951.3 49.3L950 52.8L948.7 49.3L945.2 48L948.7 46.7Z" fill="#f6e3a1" stroke-width="1"/><path d="M742 40L743.1 42.9L746 44L743.1 45.1L742 48L740.9 45.1L738 44L740.9 42.9Z" fill="#f6e3a1" stroke-width="1"/><path d="M980 78L981.1 80.9L984 82L981.1 83.1L980 86L978.9 83.1L976 82L978.9 80.9Z" fill="#f6e3a1" stroke-width="1"/><path d="M22 238C70 168 140 138 222 136C292 136 334 176 372 238" stroke-width="1.6"/><path d="M70 196Q150 170 230 168Q300 168 336 196" stroke-width="2.2"/><path d="M84 190L84 198M118 179L118 188M152 172L152 181M188 168L188 177M260 168L260 177M296 174L296 183M326 188L326 196" stroke-width="1.4"/><path d="M110 168V150L123.0 142L136 150V168" fill="none" stroke-width="1.4"/><path d="M138 168V144L149.0 136L160 144V168" fill="none" stroke-width="1.4"/><path d="M232 168V148L245.0 140L258 148V168" fill="none" stroke-width="1.4"/><path d="M262 168V152L273.0 144L284 152V168" fill="none" stroke-width="1.4"/><path d="M286 168V154L298.0 146L310 154V168" fill="none" stroke-width="1.4"/><path d="M164 168V124H184V168M162 124A12 12 0 0 1 186 124M174 112V104" stroke-width="1.5"/><path d="M200 168V94H218V168M198 94H220M203 106H215V116H203Z" stroke-width="1.5"/><path d="M204 94L209 82L214 94" stroke-width="1.5"/><path d="M46 300V238H124M246 238H334V300M42 238H128L124 230H50ZM242 238H338L330 230H250Z" stroke-width="1.5"/><path d="M120 300V206H250V300M114 206H256L185 178Z" stroke-width="1.8"/><path d="M138 300V272A12 12 0 0 1 162 272V300" stroke-width="1.5"/><path d="M173 300V272A12 12 0 0 1 197 272V300" stroke-width="1.5"/><path d="M208 300V272A12 12 0 0 1 232 272V300" stroke-width="1.5"/><path d="M58 286V258A6 6 0 0 1 70 258V286Z" stroke-width="1.2"/><path d="M82 286V258A6 6 0 0 1 94 258V286Z" stroke-width="1.2"/><path d="M104 286V258A6 6 0 0 1 116 258V286Z" stroke-width="1.2"/><path d="M258 286V258A6 6 0 0 1 270 258V286Z" stroke-width="1.2"/><path d="M282 286V258A6 6 0 0 1 294 258V286Z" stroke-width="1.2"/><path d="M306 286V258A6 6 0 0 1 318 258V286Z" stroke-width="1.2"/><circle cx="185" cy="224" r="12" stroke-width="1.6"/><path d="M185 224L180.5 216.2M185 224L185 214.5" stroke-width="1.6"/><path d="M452 281V295" stroke-width="1.8"/><circle cx="452" cy="266" r="15" stroke-width="1.4"/><path d="M566 276V290" stroke-width="1.8"/><circle cx="566" cy="258" r="18" stroke-width="1.4"/><path d="M648 289V303" stroke-width="1.8"/><circle cx="648" cy="276" r="13" stroke-width="1.4"/><path d="M510 234Q519 258 515 280H505Q501 258 510 234Z" stroke-width="1.3"/><path d="M528 240Q537 264 533 286H523Q519 264 528 240Z" stroke-width="1.3"/><path d="M684 234Q693 258 689 280H679Q675 258 684 234Z" stroke-width="1.3"/><path d="M704 300V198H952V300M698 198H958L942 182H714Z" stroke-width="1.8"/><path d="M704 246H952M704 249H952" stroke-width="1.1"/><path d="M760 184V168H772V184M758 168H774" stroke-width="1.4"/><path d="M900 184V168H912V184M898 168H914" stroke-width="1.4"/><path d="M709.8 300V270A19 19 0 0 1 747.8 270V300" stroke-width="1.6"/><path d="M728.8 251V258" stroke-width="1"/><path d="M724.8 258H732.8L731.8 266H725.8Z" fill="#f6cf7e" stroke-width="1"/><path d="M712.8 208H744.8V230H712.8ZM719.8 208V230M737.8 208V230" stroke-width="1.1"/><path d="M759.4 300V270A19 19 0 0 1 797.4 270V300" stroke-width="1.6"/><path d="M778.4 251V258" stroke-width="1"/><path d="M774.4 258H782.4L781.4 266H775.4Z" fill="#f6cf7e" stroke-width="1"/><path d="M762.4 208H794.4V230H762.4ZM769.4 208V230M787.4 208V230" stroke-width="1.1"/><path d="M809 300V270A19 19 0 0 1 847 270V300" stroke-width="1.6"/><path d="M828 251V258" stroke-width="1"/><path d="M824 258H832L831 266H825Z" fill="#f6cf7e" stroke-width="1"/><path d="M812 208H844V230H812ZM819 208V230M837 208V230" stroke-width="1.1"/><path d="M858.6 300V270A19 19 0 0 1 896.6 270V300" stroke-width="1.6"/><path d="M877.6 251V258" stroke-width="1"/><path d="M873.6 258H881.6L880.6 266H874.6Z" fill="#f6cf7e" stroke-width="1"/><path d="M861.6 208H893.6V230H861.6ZM868.6 208V230M886.6 208V230" stroke-width="1.1"/><path d="M908.2 300V270A19 19 0 0 1 946.2 270V300" stroke-width="1.6"/><path d="M927.2 251V258" stroke-width="1"/><path d="M923.2 258H931.2L930.2 266H924.2Z" fill="#f6cf7e" stroke-width="1"/><path d="M911.2 208H943.2V230H911.2ZM918.2 208V230M936.2 208V230" stroke-width="1.1"/><path d="M968 300V226" stroke-width="2.4"/><path d="M938 230Q944 206 970 204Q996 206 998 228Q984 238 968 234Q950 240 938 230Z" stroke-width="1.3"/><path d="M190 322C262 362 332 364 402 338C480 308 530 292 610 304C700 318 760 350 838 322" stroke="#56623f" stroke-width="27"/><path d="M190 322C262 362 332 364 402 338C480 308 530 292 610 304C700 318 760 350 838 322" stroke="#efe6d4" stroke-width="23"/><path d="M190 322C262 362 332 364 402 338C480 308 530 292 610 304C700 318 760 350 838 322" stroke="#c9b98f" stroke-width="2" stroke-dasharray="9 11"/><g transform="translate(317.9 355.1) rotate(-1) scale(1 1)"><path d="M-66 -12h-14M-60 -24h-18M-66 -36h-12" stroke="#8a8670" stroke-width="1.8" fill="none"/><path d="M-48 -4V-40Q-48 -48 -40 -48H34Q46 -48 50 -36L52 -22V-4Z" fill="#6f86b0" stroke="#56623f" stroke-width="1.8"/><path d="M-48 -18H52" stroke="#4d6390" stroke-width="3"/><rect x="-42" y="-42" width="11" height="14" rx="2.5" fill="#e9f1f6" stroke="#56623f" stroke-width="1.1"/><rect x="-27" y="-42" width="11" height="14" rx="2.5" fill="#e9f1f6" stroke="#56623f" stroke-width="1.1"/><rect x="-12" y="-42" width="11" height="14" rx="2.5" fill="#e9f1f6" stroke="#56623f" stroke-width="1.1"/><rect x="3" y="-42" width="11" height="14" rx="2.5" fill="#e9f1f6" stroke="#56623f" stroke-width="1.1"/><rect x="18" y="-42" width="11" height="14" rx="2.5" fill="#e9f1f6" stroke="#56623f" stroke-width="1.1"/><path d="M34 -42H44Q48 -42 49 -36L50 -28H34Z" fill="#e9f1f6" stroke="#56623f" stroke-width="1.1"/><rect x="38" y="-24" width="8" height="18" rx="1.5" fill="none" stroke="#56623f" stroke-width="1.1"/><circle cx="49" cy="-10" r="2.6" fill="#f6d77a" stroke="#56623f" stroke-width=".9"/><circle cx="-30" cy="-4" r="8" fill="#3e4a3a"/><circle cx="-30" cy="-4" r="3" fill="#d8dbc9"/><circle cx="30" cy="-4" r="8" fill="#3e4a3a"/><circle cx="30" cy="-4" r="3" fill="#d8dbc9"/></g><g transform="translate(745.7 331.3) rotate(4.1) scale(-1 1)"><path d="M50 -16L120 -34V2Z" fill="#f8e6a8" opacity=".55"/><path d="M-66 -12h-14M-60 -24h-18M-66 -36h-12" stroke="#8a8670" stroke-width="1.8" fill="none"/><path d="M-48 -4V-40Q-48 -48 -40 -48H34Q46 -48 50 -36L52 -22V-4Z" fill="#6f86b0" stroke="#56623f" stroke-width="1.8"/><path d="M-48 -18H52" stroke="#4d6390" stroke-width="3"/><rect x="-42" y="-42" width="11" height="14" rx="2.5" fill="#fff1c6" stroke="#56623f" stroke-width="1.1"/><rect x="-27" y="-42" width="11" height="14" rx="2.5" fill="#fff1c6" stroke="#56623f" stroke-width="1.1"/><rect x="-12" y="-42" width="11" height="14" rx="2.5" fill="#fff1c6" stroke="#56623f" stroke-width="1.1"/><rect x="3" y="-42" width="11" height="14" rx="2.5" fill="#fff1c6" stroke="#56623f" stroke-width="1.1"/><rect x="18" y="-42" width="11" height="14" rx="2.5" fill="#fff1c6" stroke="#56623f" stroke-width="1.1"/><path d="M34 -42H44Q48 -42 49 -36L50 -28H34Z" fill="#fff1c6" stroke="#56623f" stroke-width="1.1"/><rect x="38" y="-24" width="8" height="18" rx="1.5" fill="none" stroke="#56623f" stroke-width="1.1"/><circle cx="49" cy="-10" r="2.6" fill="#f6d77a" stroke="#56623f" stroke-width=".9"/><circle cx="-30" cy="-4" r="8" fill="#3e4a3a"/><circle cx="-30" cy="-4" r="3" fill="#d8dbc9"/><circle cx="30" cy="-4" r="8" fill="#3e4a3a"/><circle cx="30" cy="-4" r="3" fill="#d8dbc9"/></g></g>
+<text x="185" y="254" text-anchor="middle" class="nv-scritta" font-size="11.5" letter-spacing="2.4">BERGAMO</text><text x="828.0" y="160" text-anchor="middle" class="nv-scritta nv-scritta--notte" font-size="12" letter-spacing="1.6">PORTICO DEL SEMINARIO</text><g transform="translate(313.9 285.1)"><path d="M0 18V30" stroke="#56623f" stroke-width="1.4"/><rect x="-40" y="-14" width="80" height="32" rx="16" fill="#fbf6ea" stroke="#56623f" stroke-width="1.4"/><text x="0" y="8.5" text-anchor="middle" class="nv-ora" font-size="20" fill="#3e5b35">11:00</text></g><g transform="translate(749.7 261.3)"><path d="M0 18V30" stroke="#56623f" stroke-width="1.4"/><rect x="-40" y="-14" width="80" height="32" rx="16" fill="#3f4c74" stroke="#56623f" stroke-width="1.4"/><text x="0" y="8.5" text-anchor="middle" class="nv-ora" font-size="20" fill="#fbf6ea">00:00</text></g>
+</svg>
+        <ol class="navetta__tappe">
+          <li><span class="navetta__ora">11:00</span><span data-i18n="navetta.andata">Partenza dalla stazione di Bergamo</span></li>
+          <li><span class="navetta__ora" data-i18n="navetta.durata">≈ 30 min</span><span data-i18n="navetta.arrivo">Arrivo al Portico del Seminario, in tempo per la cerimonia delle 12:30</span></li>
+          <li><span class="navetta__ora">00:00</span><span data-i18n="navetta.ritorno">A mezzanotte si riparte dal Portico per tornare alla stazione</span></li>
+        </ol>
+        <p class="navetta__nota"><a href="#rsvp" data-i18n="navetta.prenota">Prenota il tuo posto nel modulo di conferma</a> · <span class="tbd" data-i18n="navetta.ritrovo">punto esatto di ritrovo davanti alla stazione: da definire</span></p>
+      </div>
+
+      <div class="cards reveal">
+        <article class="card">
+          <h3 data-i18n="arrivare.auto">In auto</h3>
+          <p data-i18n="arrivare.auto.testo">Calcinate è a circa 20 minuti da Bergamo. Dall'autostrada A4 Milano–Venezia le uscite più comode
+            sono Seriate o Grumello del Monte; poi si seguono le indicazioni per Calcinate.</p>
+          <p data-i18n="arrivare.parcheggio">La location ha un ampio parcheggio interno.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="arrivare.aereo">In aereo</h3>
+          <p data-i18n="arrivare.aereo.testo"><strong>Bergamo Orio al Serio</strong> è l'aeroporto più vicino, a circa 15 km.<br>
+            In alternativa Milano Linate (circa 55 km) o Milano Malpensa (circa 100 km).</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="arrivare.treno">In treno</h3>
+          <p data-i18n="arrivare.treno.testo">La stazione principale di riferimento è Bergamo; da lì conviene proseguire in taxi o in auto.</p>
+          <p data-i18n="arrivare.navetta"><strong>Navetta:</strong> parte alle 11:00 dalla stazione di Bergamo e riparte dal Portico a mezzanotte (vedi sopra).</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ INFO UTILI ============ -->
+    <section class="section" id="info">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="info.eyebrow">Tutto quello che serve sapere</p>
+        <h2 data-i18n="info.titolo">Info utili</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+      </div>
+
+      <div class="faq reveal">
+        <details>
+          <summary data-i18n="info.dormire">Dove posso dormire?</summary>
+          <p data-i18n="info.dormire.testo">Il 1° maggio è festivo e cade di sabato: vi consigliamo di prenotare con largo anticipo.</p>
+          <p data-i18n="info.dormire.navetta">Vi consigliamo Bergamo, vicino alla stazione: da lì parte la navetta alle 11:00 e lì vi riporta a mezzanotte.</p>
+          <p><a href="https://www.google.com/maps/search/hotel+vicino+stazione+Bergamo/@45.6907,9.6746,16z" target="_blank" rel="noopener" data-i18n="info.dormire.mappa">Vedi gli hotel vicino alla stazione su Google Maps</a></p>
+        </details>
+        <details>
+          <summary data-i18n="info.cibo">Ho esigenze alimentari particolari</summary>
+          <p data-i18n="info.cibo.testo">Nessun problema: è previsto un menù anche vegetariano, vegano o senza glutine.
+            Indicatelo nel modulo RSVP insieme a eventuali allergie.</p>
+        </details>
+        <details>
+          <summary data-i18n="info.accesso">La location è accessibile?</summary>
+          <p data-i18n="info.accesso.testo">Sì: il Portico del Seminario è senza barriere architettoniche e ha un ascensore per i piani superiori.</p>
+        </details>
+        <details>
+          <summary data-i18n="info.bambini">Posso portare i bambini?</summary>
+          <p class="tbd" data-i18n="dadefinire">Da definire.</p>
+        </details>
+        <details>
+          <summary data-i18n="info.lista">Lista nozze</summary>
+          <p data-i18n="info.lista.testo">La cosa più importante per noi è avervi con noi.</p>
+          <p class="tbd" data-i18n="info.lista.dafare">Dettagli lista nozze / IBAN: da inserire.</p>
+        </details>
+        <details>
+          <summary data-i18n="info.foto">Foto della giornata</summary>
+          <p class="tbd" data-i18n="info.foto.dafare">Hashtag o album condiviso: da definire.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section class="section section--tint" id="rsvp">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="rsvp.eyebrow">Ci sarai?</p>
+        <h2 data-i18n="rsvp.titolo">Conferma la presenza</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+        <p class="note" data-i18n="rsvp.scadenza">Vi chiediamo di rispondere entro il <span class="tbd">— data da definire</span>.</p>
+      </div>
+
+      <form class="rsvp reveal" id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="r-name" data-i18n="rsvp.nome">Nome e cognome</label>
+          <input id="r-name" name="nome" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="r-contact" data-i18n="rsvp.contatto">Email o telefono</label>
+          <input id="r-contact" name="contatto" type="text" autocomplete="email" required>
+        </div>
+
+        <fieldset class="field field--choice">
+          <legend data-i18n="rsvp.presenza">Parteciperai?</legend>
+          <label><input type="radio" name="presenza" value="Sì" required> <span data-i18n="rsvp.si">Sì, con piacere</span></label>
+          <label><input type="radio" name="presenza" value="No"> <span data-i18n="rsvp.no">Purtroppo no</span></label>
+        </fieldset>
+
+        <div class="field field--half" data-if-attending>
+          <label for="r-guests" data-i18n="rsvp.persone">Quante persone (te compreso/a)?</label>
+          <input id="r-guests" name="persone" type="number" min="1" max="10" value="1">
+        </div>
+        <div class="field" data-if-attending>
+          <label for="r-names" data-i18n="rsvp.accompagnatori">Nomi degli accompagnatori</label>
+          <input id="r-names" name="accompagnatori" type="text" placeholder="Facoltativo" data-i18n-placeholder="rsvp.facoltativo">
+        </div>
+        <div class="field" data-if-attending>
+          <label for="r-diet" data-i18n="rsvp.esigenze">Esigenze alimentari o allergie</label>
+          <input id="r-diet" name="esigenze_alimentari" type="text" placeholder="Es. vegetariano, celiachia, allergia alle noci…" data-i18n-placeholder="rsvp.esigenze.esempio">
+        </div>
+
+        <fieldset class="field field--choice" data-if-attending>
+          <legend data-i18n="rsvp.navetta">Userai la navetta da Bergamo?</legend>
+          <p class="field__nota" data-i18n="rsvp.navetta.nota">Andata alle 11:00 dalla stazione di Bergamo, ritorno a mezzanotte dal Portico alla stazione.</p>
+          <label><input type="radio" name="navetta" value="Andata e ritorno"> <span data-i18n="rsvp.navetta.ar">Sì, andata e ritorno</span></label>
+          <label><input type="radio" name="navetta" value="Solo andata"> <span data-i18n="rsvp.navetta.andata">Solo andata</span></label>
+          <label><input type="radio" name="navetta" value="Solo ritorno"> <span data-i18n="rsvp.navetta.ritorno">Solo ritorno</span></label>
+          <label><input type="radio" name="navetta" value="No"> <span data-i18n="rsvp.navetta.no">No, ci organizziamo da soli</span></label>
+        </fieldset>
+        <div class="field field--half" data-if-navetta hidden>
+          <label for="r-bus" data-i18n="rsvp.navetta.posti">Quanti posti in navetta?</label>
+          <input id="r-bus" name="posti_navetta" type="number" min="1" max="10" value="1">
+        </div>
+        <div class="field">
+          <label for="r-msg" data-i18n="rsvp.messaggio">Un messaggio per gli sposi</label>
+          <textarea id="r-msg" name="messaggio" rows="3" placeholder="Facoltativo" data-i18n-placeholder="rsvp.facoltativo"></textarea>
+        </div>
+
+        <!-- campo trappola contro lo spam: invisibile, le persone non lo vedono -->
+        <p class="rsvp__trappola" aria-hidden="true"><label>Non compilare <input type="text" name="sito_web" tabindex="-1" autocomplete="off"></label></p>
+        <button class="btn btn--solid" type="submit" data-i18n="rsvp.invia">Invia risposta</button>
+        <p class="rsvp__status" id="rsvp-status" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <img class="footer__deco" src="assets/illustrations/rametto.svg" alt="">
+    <p class="footer__mono">A <span>&amp;</span> P</p>
+    <p>01 · 05 · 2027 — Calcinate</p>
+    <a href="#home" data-i18n="footer.su">Torna su ↑</a>
+  </footer>
+
+  <script src="assets/vendor/d3-array.min.js"></script>
+  <script src="assets/vendor/d3-geo.min.js"></script>
+  <script src="assets/vendor/topojson-client.min.js"></script>
+  <script src="assets/vendor/mondo-110m.js"></script>
+  <script src="js/lingue.js?v=11"></script>
+  <script src="js/main.js?v=15"></script>
+</body>
+</html>
