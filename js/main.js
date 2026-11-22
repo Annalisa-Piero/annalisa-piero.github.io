@@ -2,7 +2,7 @@
 const CONFIG = {
   // Indirizzo dell'app web del Foglio Google che raccoglie le risposte RSVP (finisce con /exec).
   // Si crea con strumenti/rsvp-foglio-google.gs. Vuoto = le conferme non sono ancora aperte (nessun invio).
-  rsvpUrl: "",
+  rsvpUrl: "https://script.google.com/macros/s/AKfycbyxII7iHu6sZO8zl6nriUrQwxRtXwSIsvRneNAZBEeiccCn0t2Dmnb5ByXOS5nspiziaA/exec",
   event: {
     // il titolo dell'evento è in js/lingue.js ("calendario.titolo"), nelle due lingue
     location: "Portico del Seminario, Via Portico del Seminario 1, 24050 Calcinate (BG)",

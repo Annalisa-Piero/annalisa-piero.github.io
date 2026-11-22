@@ -309,24 +309,43 @@ body.pagina-invito::after { content: ""; position: fixed; inset: 0; background: 
   scriviNome();
   aggiornaLink();
 
-  // il biglietto uscito si mette al centro, il più grande possibile, sopra i pulsanti
+  // il biglietto uscito si mette al centro, il più grande possibile, sopra i pulsanti.
+  // Si ingrandisce con scale() mentre si muove; alla fine si ridisegna davvero a quella grandezza (fissa),
+  // altrimenti Chrome e Safari lasciano sfocati i disegni (il rametto) ingranditi come una foto.
   function posiziona(animato) {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     const alto = 64;
     const basso = azioni.offsetHeight + 22 + 18;
+    if (!animato) biglietto.style.fontSize = "";   // si misura alla grandezza di partenza
     const w0 = biglietto.offsetWidth;
     const h0 = biglietto.offsetHeight;
-    const larghezza = Math.min(vw - 32, ((vh - alto - basso) * w0) / h0, 520);
-    const r = scena.getBoundingClientRect();
-    const dx = vw / 2 - (r.left + biglietto.offsetLeft + w0 / 2);
-    const dy = alto + (vh - alto - basso) / 2 - (r.top + biglietto.offsetTop + h0 / 2);
-    biglietto.style.transition = animato ? "transform 1.15s cubic-bezier(.4, 0, .2, 1)" : "none";
-    biglietto.style.transform = `translate(${dx}px, ${dy}px) scale(${larghezza / w0})`;
+    const s = Math.min(vw - 32, ((vh - alto - basso) * w0) / h0, 520) / w0;
+    const x = Math.round((vw - w0 * s) / 2);                        // dove finisce l'angolo in alto a sinistra
+    const y = Math.round(alto + (vh - alto - basso - h0 * s) / 2);   // (pixel interi: niente bordi sfumati)
     if (!animato) {
-      void biglietto.offsetWidth;
-      biglietto.style.transition = "";
+      fissa(s, x, y);
+      return;
     }
+    const r = scena.getBoundingClientRect();
+    const dx = x + (w0 * s) / 2 - (r.left + biglietto.offsetLeft + w0 / 2);
+    const dy = y + (h0 * s) / 2 - (r.top + biglietto.offsetTop + h0 / 2);
+    biglietto.style.transition = "transform 1.15s cubic-bezier(.4, 0, .2, 1)";
+    biglietto.style.transform = `translate(${dx}px, ${dy}px) scale(${s})`;
+    passo(1200, () => fissa(s, x, y));
+  }
+
+  // il biglietto alla grandezza vera (caratteri s volte più grandi), senza scale(): tutto nitido
+  function fissa(s, x, y) {
+    biglietto.style.transition = "none";
+    biglietto.style.fontSize = "";
+    const em = parseFloat(getComputedStyle(biglietto).fontSize);
+    biglietto.style.fontSize = em * s + "px";
+    biglietto.style.transform = "none";
+    const r = biglietto.getBoundingClientRect();
+    biglietto.style.transform = `translate(${x - r.left}px, ${y - r.top}px)`;
+    void biglietto.offsetWidth;
+    biglietto.style.transition = "";
   }
 
   function passo(ms, fn) { timer.push(setTimeout(fn, ms)); }
@@ -355,6 +374,7 @@ body.pagina-invito::after { content: ""; position: fixed; inset: 0; background: 
     body.classList.remove("rompi", "aperta", "esce", "fuori", "pronta", "caricata");
     biglietto.style.transform = "";
     biglietto.style.transition = "";
+    biglietto.style.fontSize = "";
     apriBtn.hidden = false;
     void body.offsetWidth;
     body.classList.remove("senza-animazioni");
