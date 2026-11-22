@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title data-i18n="invito.meta.titolo">Un invito per voi · Annalisa &amp; Piero</title>
 <meta name="robots" content="noindex">
+<!-- anteprima del link su WhatsApp, Telegram, iMessage: la busta chiusa (immagine fatta da inviti/digitali/genera.py) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Annalisa &amp; Piero">
+<meta property="og:title" content="Annalisa &amp; Piero · 1 · 5 · 2027">
+<meta property="og:description" content="Una busta per te: aprila per leggere l'invito · An envelope for you: open it to read the invitation">
+<meta property="og:image" content="https://annalisa-piero.github.io/assets/anteprima-invito.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="840">
+<meta property="og:image:alt" content="Una busta salvia con il sigillo A&amp;P · A sage envelope with an A&amp;P wax seal">
+<meta name="twitter:card" content="summary_large_image">
 <!--
   Invito digitale: la busta salvia si apre ed esce l'invito di carta («Avorio e salvia»), poi si va al sito.
   Link personale: invito.html?per=Famiglia%20Rossi  (in inglese: &lang=en). Senza "per" la busta dice "per voi".
@@ -196,6 +207,7 @@ body.pagina-invito::after { content: ""; position: fixed; inset: 0; background: 
 .foto .lingua-angolo { display: none; }
 .foto .scena { font-size: min(2.6vw, calc(100vh / 50)); margin-top: -4em; }
 .foto .suggerimento { top: calc(100% + 2.4em); font-size: 1.25em; }
+.anteprima .destinatario__per { display: none; }   /* anteprima uguale per tutti: al posto del nome, gli sposi */
 
 .senza-animazioni *, .senza-animazioni *::before, .senza-animazioni *::after { transition: none !important; animation: none !important; }
 @media (prefers-reduced-motion: reduce) {
@@ -375,6 +387,12 @@ body.pagina-invito::after { content: ""; position: fixed; inset: 0; background: 
   if (new URLSearchParams(location.search).has("foto")) {
     body.classList.add("foto");
     document.querySelector(".suggerimento").textContent = Lingua.attuale === "en" ? "Open your invitation" : "Apri l'invito";
+    // ...&foto&anteprima: l'immagine dell'anteprima dei link, senza nome e senza lingua
+    if (new URLSearchParams(location.search).has("anteprima")) {
+      body.classList.add("anteprima");
+      nome.textContent = "Annalisa & Piero";
+      document.querySelector(".suggerimento").textContent = "1 · 5 · 2027";
+    }
   }
 })();
 </script>
